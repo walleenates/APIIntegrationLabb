@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Search and User Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        div {
+            padding: 20px;
+            text-align: center;
+        }
+        #searchInput, #fetchBreedsBtn, #fetchUsersBtn, #categorySelect {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+            margin: 10px;
+        }
+        #fetchBreedsBtn, #fetchUsersBtn {
+            width: auto;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        #fetchBreedsBtn:hover, #fetchUsersBtn:hover {
+            background-color: #0056b3;
+        }
+        #loading, #emptyState {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #loading {
+            color: #007bff;
+        }
+        #emptyState {
+            color: #dc3545;
+        }
+        #animalContainer, #userContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .animal-card, .user-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 10px;
+            width: 300px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .animal-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .animal-card .details, .user-card p {
+            padding: 15px;
+            text-align: center;
+        }
+        .animal-card .details h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .user-card h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="searchInput" placeholder="Search for breeds...">
+        <button id="fetchBreedsBtn">Fetch Breeds</button>
+        <button id="fetchUsersBtn">Fetch Users</button>
+        <select id="categorySelect">
+            <option value="">Select Category</option>
+        </select>
+    </div>
+    <div id="loading" style="display:none;">Loading...</div>
+    <div id="emptyState" style="display:none;">No breeds found.</div>
+    <div id="animalContainer" style="display:none;"></div>
+    <div id="userContainer" style="display:none;"></div>
+    <div id="breedInfo"></div>
+
+
+    <script src="script.js"></script> 
+</body>
+</html>
